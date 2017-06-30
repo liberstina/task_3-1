@@ -32,25 +32,24 @@ public class StudentStatusCheck {
         automationList.add(javaCore);
         automationList.add(qa);
 
-        Student ivanov = new Student("Ivan", "Ivanov", new GregorianCalendar(2017, 5, 10));
-        Student petrov = new Student("Petr", "Petrov", new GregorianCalendar(2017, 5, 10));
-        Student sidorov = new Student("Sidor", "Sidorov", new GregorianCalendar(2017, 6, 10));
-        Student alexandrova = new Student("Alexandra", "Alexandrova", new GregorianCalendar(2017, 6, 10));
+        Student ivanov = new Student("Иван", "Иванов", new GregorianCalendar(2017, 5, 10));
+        Student petrov = new Student("Петр", "Петров", new GregorianCalendar(2017, 5, 10));
+        Student sidorov = new Student("Сидор", "Сидоров", new GregorianCalendar(2017, 6, 10));
+        Student alexandrova = new Student("Александра", "Александрова", new GregorianCalendar(2017, 6, 10));
 
-        Map <Course, Integer> jsMap = ivanov.createProgram(jsList);
-        Map <Course, Integer> javaMap = petrov.createProgram(javaList);
-        Map <Course, Integer> automationMap = ivanov.createProgram(automationList);
-        Map <Course, Integer> qaMap = ivanov.createProgram(qaList);
-        Program jsProgram = new Program("Javascript Developer", jsMap);
-        Program javaProgram = new Program("Java Developer", javaMap);
-        Program automationProgram  = new Program("QA Automation", automationMap);
+        Map<Course, Integer> jsMap = ivanov.createProgram(jsList);
+        Map<Course, Integer> javaMap = petrov.createProgram(javaList);
+        Map<Course, Integer> automationMap = ivanov.createProgram(automationList);
+        Map<Course, Integer> qaMap = ivanov.createProgram(qaList);
+        Program jsProgram = new Program("Javascript Разработчик", jsMap);
+        Program javaProgram = new Program("Java Разработчик", javaMap);
+        Program automationProgram = new Program("QA Automation", automationMap);
         Program qaProgram = new Program("QA Manual", qaMap);
 
-
-        ivanov.realWork(ivanov.getStartStudy(), jsProgram.calculateDuration());
-        petrov.realWork(petrov.getStartStudy(), javaProgram.calculateDuration());
-        sidorov.realWork(sidorov.getStartStudy(), automationProgram.calculateDuration());
-        alexandrova.realWork(alexandrova.getStartStudy(), qaProgram.calculateDuration());
+        ivanov.realWork(jsProgram, ivanov.getStartStudy().getTime(), jsProgram.calculateDuration());
+        petrov.realWork(javaProgram, petrov.getStartStudy().getTime(), javaProgram.calculateDuration());
+        sidorov.realWork(automationProgram, sidorov.getStartStudy().getTime(), automationProgram.calculateDuration());
+        alexandrova.realWork(qaProgram, alexandrova.getStartStudy().getTime(), qaProgram.calculateDuration());
 
     }
 }

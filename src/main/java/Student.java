@@ -46,29 +46,20 @@ public class Student {
         return program;
     }
 
-    public void realWork(Calendar startDate, int duration) {
-        Calendar currentDate = Calendar.getInstance();
-        long durationInMillis = duration * 3600000;
-        long difference = startDate.getTimeInMillis() - currentDate.getTimeInMillis();
-        if (difference < durationInMillis)
-            System.out.println("Обучение закончено. После окончания прошло " + (durationInMillis - difference) / 3600000 + " часов.");
-        else
-            System.out.println("Обучение не закончено. До окончания осталось " + (difference - durationInMillis) / 3600000 + " часов.");
-    }
-/*
-    public void realWork(Calendar startDate, int duration) {
+    public void realWork(Program program, Date startDate, int duration) {
         Scanner scan = new Scanner(System.in);
+        String s = scan.nextLine();
         Calendar currentDate = Calendar.getInstance();
         long durationInMillis = duration * 3600000;
-        long difference = startDate.getTimeInMillis() - currentDate.getTimeInMillis();
-        if ((difference < durationInMillis) && ((scan.nextLine().equals("0")) || (scan.nextLine().equals(""))))
+        long difference = startStudy.getTimeInMillis() - currentDate.getTimeInMillis();
+        if ((difference < durationInMillis) && ((s.equals("0")) || (s.equals(""))))
             System.out.println("Обучение закончено. После окончания прошло " + (durationInMillis - difference) / 3600000 + " часов.");
-        else if ((difference < durationInMillis) && (!(scan.nextLine().equals("0") )|| !(scan.nextLine().equals(""))))
-            System.out.println(name.toString() + " " + surname.toString() + " Working hours from 00 till 24 " + duration + " " + startDate + " Обучение закончено. После окончания прошло " + (durationInMillis - difference) / 3600000 + " часов.");
-        else if ((difference > durationInMillis) && ((scan.nextLine().equals("0")) || (scan.nextLine().equals(""))))
-        System.out.println("Обучение не закончено. До окончания осталось " + (difference - durationInMillis) / 3600000 + " часов.");
-        else if ((difference > durationInMillis) && (!(scan.nextLine().equals("0")) || !(scan.nextLine().equals(""))))
-            System.out.println(name.toString() + " " + surname.toString() + " Working hours from 00 till 24 " + duration + " " + startDate + " Обучение не закончено. До окончания осталось " + (difference - durationInMillis) / 3600000 + " часов.");
+        else if ((difference < durationInMillis) && (!(s.equals("0")) || !(s.equals(""))))
+            System.out.println(name.toString() + " " + surname.toString() + ". Рабочие часы: с 00 до 24. Название программы - " + program.getName() + ". Длительность программы - " + duration + " часов. Начало обучения - " + startDate + ". Обучение закончено. После окончания прошло " + (durationInMillis - difference) / 3600000 + " часов.");
+        else if ((difference > durationInMillis) && ((s.equals("0")) || (s.equals(""))))
+            System.out.println("Обучение не закончено. До окончания осталось " + (difference - durationInMillis) / 3600000 + " часов.");
+        else if ((difference > durationInMillis) && (!(s.equals("0")) || !(s.equals(""))))
+            System.out.println(name.toString() + " " + surname.toString() + ". Рабочие часы: с 00 до 24. Название программы - " + program.getName() + ". Длительность программы - " + duration + " часов. Начало обучения - " + startDate + ". Обучение не закончено. До окончания осталось " + (difference - durationInMillis) / 3600000 + " часов.");
     }
-*/
+
 }

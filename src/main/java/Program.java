@@ -37,8 +37,8 @@ public class Program {
         this.programMap = programMap;
     }
 
-    public int calculateDuration(){
-        for (Map.Entry<Course, Integer> entry : programMap.entrySet()){
+    public int calculateDuration() {
+        for (Map.Entry<Course, Integer> entry : programMap.entrySet()) {
             totalDuration += entry.getValue();
         }
         return totalDuration;
