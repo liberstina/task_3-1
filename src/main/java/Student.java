@@ -6,52 +6,36 @@ import java.util.*;
 public class Student {
     private String name;
     private String surname;
-    private Calendar startStudy;
+    private Program individualProgram;
+    /*private Calendar startStudy;*/
 
-    public Calendar getStartStudy() {
+    /*public Calendar getStartStudy() {
         return startStudy;
-    }
+    }*/
 
-    public void setStartStudy(Calendar startStudy) {
-        this.startStudy = startStudy;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getSurname() {
-        return surname;
-    }
-
-    public void setSurname(String surname) {
-        this.surname = surname;
-    }
-
-    public Student(String name, String surname, Calendar startStudy) {
+    public Student(String name, String surname, Program program) {
         this.name = name;
         this.surname = surname;
-        this.startStudy = startStudy;
+        this.individualProgram = program;
+        /*this.startStudy = startStudy;*/
     }
 
-    public Map<Course, Integer> createProgram(List<Course> courses) {
+    /*public Map<Course, Integer> createProgram(List<Course> courses) {
         Map<Course, Integer> program = new HashMap<>();
         for (int i = 0; i < courses.size(); i++) {
             program.put(courses.get(i), courses.get(i).getDuration());
         }
         return program;
-    }
+    }*/
 
+    //TODO think about input parameters
     public void realWork(Program program, Date startDate, int duration) {
+        //what input should be?
         Scanner scan = new Scanner(System.in);
         String s = scan.nextLine();
         Calendar currentDate = Calendar.getInstance();
         long durationInMillis = duration * 3600000;
-        long difference = startStudy.getTimeInMillis() - currentDate.getTimeInMillis();
+        /*long difference = startStudy.getTimeInMillis() - currentDate.getTimeInMillis();
         if ((difference < durationInMillis) && ((s.equals("0")) || (s.equals(""))))
             System.out.println("Обучение закончено. После окончания прошло " + (durationInMillis - difference) / 3600000 + " часов.");
         else if ((difference < durationInMillis) && (!(s.equals("0")) || !(s.equals(""))))
@@ -59,7 +43,7 @@ public class Student {
         else if ((difference > durationInMillis) && ((s.equals("0")) || (s.equals(""))))
             System.out.println("Обучение не закончено. До окончания осталось " + (difference - durationInMillis) / 3600000 + " часов.");
         else if ((difference > durationInMillis) && (!(s.equals("0")) || !(s.equals(""))))
-            System.out.println(name.toString() + " " + surname.toString() + ". Рабочие часы: с 00 до 24. Название программы - " + program.getName() + ". Длительность программы - " + duration + " часов. Начало обучения - " + startDate + ". Обучение не закончено. До окончания осталось " + (difference - durationInMillis) / 3600000 + " часов.");
+            System.out.println(name.toString() + " " + surname.toString() + ". Рабочие часы: с 00 до 24. Название программы - " + program.getName() + ". Длительность программы - " + duration + " часов. Начало обучения - " + startDate + ". Обучение не закончено. До окончания осталось " + (difference - durationInMillis) / 3600000 + " часов.");*/
     }
 
 }
